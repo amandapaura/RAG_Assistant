@@ -1,0 +1,52 @@
+# Core dependencies
+pydantic>=2.0.0,<3.0.0
+pydantic-settings>=2.0.0,<3.0.0  # Para BaseSettings no Pydantic v2
+python-dotenv>=1.0.0,<2.0.0
+
+# LangChain (versões compatíveis)
+langchain>=0.1.5,<0.3.0
+langchain-community>=0.0.10,<0.3.0
+langchain-experimental>=0.0.50,<0.3.0
+langgraph>=0.0.20,<0.3.0
+langsmith>=0.0.80,<0.3.0
+
+# LLM Local
+ctransformers>=0.2.0
+
+# Modelos open source (versões mais estáveis)
+sentence-transformers>=2.2.0,<3.0.0
+transformers>=4.30.0,<5.0.0
+torch>=2.0.0,<3.0.0
+accelerate>=0.20.0,<1.0.0
+
+# Vector DB  
+qdrant-client>=1.6.0,<2.0.0
+chromadb>=0.4.0,<1.0.0
+
+# SQL
+psycopg2-binary>=2.9.0,<3.0.0
+sqlalchemy>=2.0.0,<3.0.0
+
+# Web e APIs
+streamlit>=1.28.0,<2.0.0
+requests>=2.31.0,<3.0.0
+beautifulsoup4>=4.12.0,<5.0.0
+
+# Avaliação e métricas
+evaluate>=0.4.0,<1.0.0
+datasets>=2.14.0,<3.0.0
+
+# Utilities
+python-dotenv>=1.0.0,<2.0.0
+pydantic>=2.0.0,<3.0.0
+loguru>=0.7.0,<1.0.0
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<2.0.0
+
+# Document processing
+PyPDF2>=3.0.0,<4.0.0
+python-docx>=0.8.11,<1.0.0
+
+# Tests
+pytest>=7.4.0,<8.0.0
+pytest-asyncio>=0.21.0,<1.0.0

@@ -1,0 +1,51 @@
+rag-assistant/
+├── app/
+│   ├── __init__.py
+│   ├── main.py                 # Entrada principal Streamlit
+│   ├── config.py              # Configurações centralizadas
+│   └── core/
+│       ├── __init__.py
+│       ├── embeddings.py      # Gerenciamento de embeddings
+│       └── evaluation.py      # Métricas de avaliação
+├── agents/
+│   ├── __init__.py
+│   ├── base.py                # Agent base
+│   ├── rag_agent.py          # Agent principal RAG
+│   ├── search_agent.py       # Agent de busca web
+│   ├── sql_agent.py          # Agent SQL
+│   └── weather_agent.py      # Agent do tempo
+├── graph/
+│   ├── __init__.py
+│   ├── nodes.py              # Nós do LangGraph
+│   ├── edges.py              # Definição de edges
+│   └── workflow.py           # Orquestração principal
+├── tools/
+│   ├── __init__.py
+│   ├── web_search.py         # Busca na web
+│   ├── vector_search.py      # Busca vetorial
+│   ├── sql_query.py          # Consultas SQL
+│   └── weather_api.py        # API do tempo
+├── vector_db/
+│   ├── __init__.py
+│   ├── qdrant_client.py      # Cliente Qdrant
+│   └── embedder.py           # Processamento de embeddings
+├── ui/
+│   ├── __init__.py
+│   ├── chat.py               # Interface de chat
+│   ├── sidebar.py            # Painel lateral
+│   └── components.py         # Componentes reutilizáveis
+├── tests/
+│   ├── __init__.py
+│   ├── test_agents.py
+│   ├── test_tools.py
+│   └── test_integration.py
+├── scripts/
+│   ├── ingest.py             # Script de ingestão
+│   └── setup_db.py           # Setup do banco
+├── docs/
+│   └── architecture.md       # Documentação da arquitetura
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+├── .env.example
+└── README.md
