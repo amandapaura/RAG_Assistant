@@ -15,8 +15,8 @@ Sistema avançado de assistente conversacional baseado em RAG (Retrieval-Augment
 ## 🚀 Quick Start
 ```bash
 # 1. Clone o repositório
-git clone <repo-url>
-cd rag-assistant
+git clone https://github.com/amandapaura/RAG_Assistant.git
+cd RAG_Assistant
 
 # 2. Configure variáveis de ambiente
 cp .env.example .env
@@ -26,10 +26,10 @@ cp .env.example .env
 docker-compose up --build
 
 # 4. Acesse a aplicação
-open http://localhost:8501
-=======
+streamlit run app/main.py
+```
 
-📊 Fluxo Completo:
+## 📊 Fluxo Completo:
 
 1. Usuário pergunta: "o que é RAG?"
                 ↓
