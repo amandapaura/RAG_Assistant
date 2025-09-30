@@ -98,23 +98,30 @@ cp .env.example .env
 # 3. Ativar ambiente virtual (Windows)
 .venv\Scripts\activate
 
-# 4. Build e start com Docker
-docker-compose up --build
+# 4. Instale dependências Python
+pip install -r requirements.txt
 
-# 5. Adicionar documentos ao Qdrant
+# 5. Suba os serviços Docker
+docker-compose up -d
+# OU se usar a versão simples (Recomendado)
+docker-compose -f docker-compose-simple.yml up -d
+
+# 6. Aguarde serviços ficarem prontos (~30 segundos)
+
+# 7. Ingira documentos no Qdrant
 python scripts/ingest.py data/documents
 
-# 6. Rodar Streamlit localmente (opcional)
+# 8. Rode a aplicação
 streamlit run app/main.py
 
-# 7. Testar no navegador
+# 9. Testar no navegador
 # A aplicação deve abrir em http://localhost:8501
 ```
 
 ### Perguntas para testar:
 
 * "O que é RAG?"
-* "Quais são os componentes do sistema?"
+* "Me fale sobre LLM?"
 * "Como está o tempo em São Paulo?" (dados simulados)
 * "Buscar notícias sobre inteligência artificial"
 
