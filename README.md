@@ -12,23 +12,6 @@ Sistema avançado de assistente conversacional baseado em RAG (Retrieval-Augment
 - **💬 Interface Moderna**: Streamlit com chat em tempo real
 - **🐳 Docker First**: Deploy completo com docker-compose
 
-## 🚀 Quick Start
-```bash
-# 1. Clone o repositório
-git clone https://github.com/amandapaura/RAG_Assistant.git
-cd RAG_Assistant
-
-# 2. Configure variáveis de ambiente
-cp .env.example .env
-# Edite .env com suas configurações
-
-# 3. Inicie com Docker
-docker-compose up --build
-
-# 4. Acesse a aplicação
-streamlit run app/main.py
-```
-
 ## 📊 Fluxo Completo:
 
 1. Usuário pergunta: "o que é RAG?"
@@ -54,3 +37,21 @@ streamlit run app/main.py
 6. LLM gera resposta BASEADA no contexto
                 ↓
 7. Retorna resposta natural ao usuário
+
+## 🚀 Quick Start
+```bash
+# 1. Clone o repositório
+git clone https://github.com/amandapaura/RAG_Assistant.git
+cd RAG_Assistant
+
+# 2. Configure variáveis de ambiente
+cp .env.example .env
+# Edite .env com suas configurações
+
+# 3. Inicie com Docker
+docker-compose up --build
+
+# 4. Acesse a aplicação
+streamlit run app/main.py
+```
+
