@@ -1,6 +1,6 @@
 🔍 Docker:
 1. Parar tudo
-docker-compose down
+docker-compose down -v
                 ↓
 2. Limpar completamente o cache e imagens corrompidas
 docker system prune -a --volumes

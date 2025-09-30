@@ -19,6 +19,10 @@ rag-assistant/
 │   ├── nodes.py              # Nós do LangGraph
 │   ├── edges.py              # Definição de edges
 │   └── workflow.py           # Orquestração principal
+├── llm_service/
+│   ├── Dockerfile
+│   ├── main.py              # Gera resposta com llm com base no contexto da RAG
+│   └── requirements.txt     # Requirements da llm
 ├── tools/
 │   ├── __init__.py
 │   ├── web_search.py         # Busca na web
