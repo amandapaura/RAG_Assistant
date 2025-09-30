@@ -12,10 +12,10 @@ docker images
 docker ps -a
                 ↓
 4. Rebuild do zero
-docker-compose build --no-cache
+docker-compose build 
                 ↓
 5. Subir os serviços
-docker-compose up
+docker-compose up -d
 
 📊 Fluxo Completo:
 
