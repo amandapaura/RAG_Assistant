@@ -16,19 +16,23 @@ Sistema avançado de assistente conversacional baseado em RAG (Retrieval-Augment
 
 1. Usuário pergunta: "O que é RAG?"
    ↓
+
 2. `rag_agent.py` chama:
 
    ```python
    search_results = self.execute_tool("vector_search", query=query, k=3)
    ```
-
    ↓
+
 3. `vector_search.py` busca no Qdrant e retorna resultados com score:
 
    * 0.8: RAG significa Retrieval-Augmented Generation...
    * 0.7: O RAG funciona em três etapas...
    * 0.6: Componentes do Sistema RAG...
+
      ↓
+
+#### (V2 - em teste)
 4. `rag_agent.py` passa para o LLM:
 
    ```python
@@ -47,7 +51,9 @@ Sistema avançado de assistente conversacional baseado em RAG (Retrieval-Augment
    ↓
 6. LLM gera resposta **baseada no contexto**
    ↓
+
 7. Retorna resposta natural ao usuário
+
 
 ## 🐳 Docker - Configuração e Execução
 
