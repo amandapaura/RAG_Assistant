@@ -20,12 +20,12 @@ Sistema avançado de assistente conversacional baseado em RAG (Retrieval-Augment
    search_results = self.execute_tool("vector_search", query=query, k=3)
                 ↓
 3. vector_search.py busca no Qdrant e retorna:
-   "1. (Score: 0.8) RAG significa Retrieval-Augmented Generation...
-    2. (Score: 0.7) O RAG funciona em três etapas...
-    3. (Score: 0.6) Componentes do Sistema RAG..."
-                ↓
+   1. (Score: 0.8) RAG significa Retrieval-Augmented Generation...
+   2. (Score: 0.7) O RAG funciona em três etapas...
+   3. (Score: 0.6) Componentes do Sistema RAG..."
+               ↓
 
-## Passos da V2
+### Passos da V2
 4. rag_agent.py passa para o LLM:
    llm_response = llm_manager.generate_response(query, search_results)
                 ↓
@@ -51,7 +51,23 @@ cp .env.example .env
 # 3. Inicie com Docker
 docker-compose up --build
 
-# 4. Acesse a aplicação
+# 4. Adicionar documentos ao Qdrant
+# ativar .venv se nao estiver ativo
+.venv\Scripts\activate #windows - apos isso voltar à raiz do projeto
+# Ingerir documentos
+python scripts/ingest.py data/documents
+
+# 5. Acesse a aplicação
 streamlit run app/main.py
+
+# 6. Testar no navegador
+# A aplicação deve abrir em http://localhost:8501
+
+# Perguntas para testar:
+
+# "O que é RAG?"
+# "Quais são os componentes do sistema?"
+# "Como está o tempo em São Paulo?" (vai usar dados simulados)
+# "Buscar notícias sobre inteligência artificial"
 ```
 
