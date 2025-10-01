@@ -68,9 +68,9 @@ A aplicação integra **busca vetorial**, **busca na web**, **consulta de previs
 ## 🔹 Limitações Atuais
 
 - Agentes ainda funcionam de forma **isolada** (não integrados entre si).
-- Alguns parâmetros configuráveis estão fixados em **valores default**.
-- LangGraph implementado apenas com **router simples**.
+- LangGraph não implementado, aplicação apenas com **router simples**.
 - LLaMA Tiny em fase de **testes** para geração contextual.
+- Banco de dados relacional ainda não configurado para busca SQL
 
 ---
 
@@ -80,3 +80,4 @@ A aplicação integra **busca vetorial**, **busca na web**, **consulta de previs
 - Parametrização dinâmica de configurações via interface.
 - Implementação de métricas mais robustas (groundedness, relevance, PII detection).
 - Substituição do router simples por workflows mais sofisticados no LangGraph.
+- Implementação do Postgree para busca SQL do agente
