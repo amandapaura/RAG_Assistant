@@ -1,22 +1,3 @@
-🔍 Docker:
-1. Parar tudo
-docker-compose down -v
-                ↓
-2. Limpar completamente o cache e imagens corrompidas
-docker system prune -a --volumes
-                ↓
-Vai perguntar se tem certeza, digite: y
-                ↓
-3. Verificar se limpou
-docker images
-docker ps -a
-                ↓
-4. Rebuild do zero
-docker-compose build 
-                ↓
-5. Subir os serviços
-docker-compose up -d
-
 📊 Fluxo Completo:
 
 1. Usuário pergunta: "o que é RAG?"
