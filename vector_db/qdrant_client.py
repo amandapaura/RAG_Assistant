@@ -5,6 +5,7 @@ from typing import List, Dict, Any, Optional
 from app.config import settings
 from app.core.embeddings import embedding_manager
 import uuid
+from ui.sidebar import render_sidebar
 
 class QdrantManager:
     def __init__(self):
@@ -57,6 +58,8 @@ class QdrantManager:
     ) -> List[Dict[str, Any]]:
         """Busca por similaridade"""
         query_embedding = embedding_manager.embed_query(query)
+        
+        print(f"   🔎 Buscando: k={k}, threshold={score_threshold}")
         
         search_result = self.client.search(
             collection_name=self.collection_name,

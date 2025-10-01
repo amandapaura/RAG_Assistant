@@ -13,6 +13,10 @@ class RAGAgent(BaseAgent):
     def process(self, query: str, context: Dict[str, Any] = None) -> AgentResponse:
         query_lower = query.lower()
         
+        # Extrair parâmetros (com valores padrão)
+        k = context.get('max_results', 3) if context else 3
+        threshold = context.get('confidence_threshold', 0.3) if context else 0.3
+
         # Saudações simples
         if any(word in query_lower for word in ["oi", "olá", "ola", "hey", "hi", "hello"]):
             return AgentResponse(
@@ -36,7 +40,10 @@ class RAGAgent(BaseAgent):
         
         # Busca na base de conhecimento
         try:
-            search_results = self.execute_tool("vector_search", query=query, k=3)
+            search_results = self.execute_tool("vector_search", 
+                                               query=query, 
+                                               k=k, 
+                                               threshold=threshold)
             
             # Se não encontrou nada relevante
             if "Nenhum documento relevante encontrado" in search_results:

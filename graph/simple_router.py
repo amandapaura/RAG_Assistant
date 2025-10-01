@@ -16,27 +16,39 @@ class SimpleRouter:
         
         query_lower = query.lower()
         
-        print(f"\n🔍 ROUTER: Processando query: {query}")
-        
+        # Extrair parâmetros do contexto (vindo do sidebar)
+        max_results = context.get('max_results', 5) if context else 5
+        confidence_threshold = context.get('confidence_threshold', 0.3) if context else 0.3
+
+        print(f"\n🔍 ROUTER: Processando query: {query} ")
+        print(f"\n k={max_results}, threshold={confidence_threshold}")
+
+        # Passa os parâmetros para o contexto dos agents
+        agent_context = {
+            'max_results': max_results,
+            'confidence_threshold': confidence_threshold
+        }
+            
         # 1. Weather Agent
         weather_keywords = [ "tempo", "clima", "weather", "temperatura", "chuva", 
                             "previsão", "graus", "celsius", "calor", "frio", "sol"]
         
         if any(kw in query_lower for kw in weather_keywords):
             print(f"   → Escolhido: WEATHER AGENT")
-            response = self.weather_agent.process(query, context)
+            response = self.weather_agent.process(query, agent_context)
             agent_name = "weather"
         
         # 2. Search Agent
-        elif any(kw in query_lower for kw in ["notícia", "noticia", "news", "buscar na web", "pesquisar", "google", "atual"]):
+        elif any(kw in query_lower for kw in ["notícia", "noticia", "news", "buscar na web", "pesquisar", "google", "atual",
+                                              "bbusca na web", "pesquisa na web", "pesquisa na internet"]):
             print(f"   → Escolhido: SEARCH AGENT")
-            response = self.search_agent.process(query, context)
+            response = self.search_agent.process(query, agent_context)
             agent_name = "search"
         
         # 3. RAG Agent (padrão)
         else:
             print(f"   → Escolhido: RAG AGENT")
-            response = self.rag_agent.process(query, context)
+            response = self.rag_agent.process(query, agent_context)
             agent_name = "rag"
         
         print(f"   ✅ Response: {response.content[:100]}...")
